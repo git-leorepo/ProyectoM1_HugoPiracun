@@ -21,7 +21,15 @@ function generarAleatorio(){
     return aleatorio_paleta;
 }
 
-
+//Funcion para generar colores aleatorios en formato hexadecimal
+function generarHexadecimal() {
+  const caracteresHexadecimales = "0123456789ABCDEF";
+  let hexadecimal = "#";
+  for (let i = 0; i < 6; i++) {
+    hexadecimal += caracteresHexadecimales[Math.floor(Math.random() * 16)];
+  }
+  return hexadecimal;
+}
 
 
 //Funcion Añadir Card: Genera una nueva card basandome en el valor enviado en los radio Buttons
