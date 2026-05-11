@@ -64,7 +64,7 @@ main {
 .contenedor{    
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    justify-items: center;
+    justify-items: ;
     width: 90%;
     height: 60%px;
     background-color: yellow;
@@ -73,11 +73,25 @@ main {
 }
 .class-container {
   /* position: relative;   */
-  width: 95%;
+  width: 78%;
   height: 250px;
   margin: 20px auto;
   background-color: black;
+  border-radius: 20px;
 }
+
+.layer-top {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%; /* Ajusta esto para ver más o menos de la capa blanca */
+  background-color: #4A90E2; /* Puedes cambiar este color */
+  border-radius: 20px;
+  z-index: 2;
+}
+
+
 
 
 /* ==========================================================================

@@ -20,15 +20,13 @@ function generarAleatorio(){
 
 //Funcion Añadir Item: Genera un nuevo div con propiedades definidas
 
-// el contador empieza en 6 porque inicialmente la paleta tiene 5 colores
-let contadorColor = 6
-// creo la variable let que va a cambiar con la funcion añadirItem
-let nuevoItem
+
+
+
+
 
 function anadirItem(){
-    //maximo puedo adicionar 9 colores
-    
-    
+    //maximo puedo adicionar 9 colores        
 }
 
 
