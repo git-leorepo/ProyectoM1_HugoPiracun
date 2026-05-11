@@ -21,6 +21,9 @@ function generarAleatorio(){
     return aleatorio_paleta;
 }
 
+
+
+
 //Funcion Añadir Card: Genera una nueva card basandome en el valor enviado en los radio Buttons
 function anadirCard(){
     let i = 0;    
@@ -36,11 +39,7 @@ function anadirCard(){
     i=1;
 }
 
-
-function valoresRadio(){
-    console.log(event.target.value)
-}
-
+//Funcion para crear el elemento card y todo lo que conlleva adentro del article, como el div y el parrafo con el nombre del color
 function crearCard(){
     //Creo el article que contiene la card    
         const nuevoArticle = document.createElement("article");
@@ -63,16 +62,6 @@ radioBtnColor.addEventListener('change', anadirCard)
 // Generar cards por defecto cuando carga la página
 anadirCard()
 
-
-
-
-
-
-
-
-
-
-//Funcion cambiar color: Cambia de paleta de colores al darle clic al boton
 
 
 

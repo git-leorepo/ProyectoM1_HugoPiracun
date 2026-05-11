@@ -33,12 +33,19 @@
     <div id="main-controles" class="class-controles">
         <article id="articulo-botones" class="clase-articulo-botones">            
                 <!-- Botones de funcionalidades -->                                            
-                <button id="botonGenerarCard">Generar Color</button>
+                <!-- <button id="botonGenerarCard">Generar Color</button> -->
                 <fieldset id="contenedor-radio-colores">
-                    <legend>tamaño de la paleta:</legend>
-                    <label><input type="radio" name="palette-size" value="6" checked> 6</label>
-                    <label><input type="radio" name="palette-size" value="8"> 8</label>
-                    <label><input type="radio" name="palette-size" value="9"> 9</label>                
+                    
+                    <div class="radio-buttons-wrapper">
+                        <input type="radio" name="palette-size" value="6" id="size-6" checked>
+                        <label for="size-6">6 colores</label>
+                        
+                        <input type="radio" name="palette-size" value="8" id="size-8">
+                        <label for="size-8">8 colores</label>
+                        
+                        <input type="radio" name="palette-size" value="9" id="size-9">
+                        <label for="size-9">9 colores</label>
+                    </div>
                 </fieldset>                
         </article>
     </div>
