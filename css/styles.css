@@ -10,10 +10,21 @@ Tipografía
 Layout
 ========================================================================== */
 
+/* HEADER */
 header{
-    background-color: yellow;    
+    background-color: yellow;
+    display: flex;
+    justify-content: center;    
 }
 
+.titulo-clase{
+    background-color: #DDEFF9;    
+    width: 90%;
+    
+}
+
+
+/* MAIN */
 main {
     display: flex;
     justify-content: center;
@@ -24,7 +35,7 @@ main {
     background-color: gray;    
     padding: 0px;
     margin-top: 2rem;
-    width: 80%;
+    width: 90%;
     height: 500px;
     margin-bottom: 3rem;    
 
