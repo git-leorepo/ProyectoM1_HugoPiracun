@@ -9,17 +9,35 @@ const btnGenerarPaleta = document.getElementById('botonGenerarPaleta')
 //Btn Generar Card
 const btnGenerarCard = document.querySelector("#botonGenerarCard")
 
-//Radio Button Colores
+//Radio Button Cantidad de Colores
 const radioBtnColor = document.querySelector("#contenedor-radio-colores")
+
+//Radio Button Tipo de Colores
+const radioBtnColorSelected = document.querySelectorAll('input[name="tipo_color"]');
 
 
 /*FUNCIONES*/
 
-//Funcion generar aleatorio
-function generarAleatorio(){
-    let aleatorio_paleta = Math.floor(Math.random()*23);
-    return aleatorio_paleta;
+//Funcion para obtener el formato de color seleccionado (HEX o HSL)
+function getColorFormat(){
+    const selected = document.querySelector('input[name="tipo_color"]:checked');
+    return selected ? selected.value : "HEX";
 }
+
+//Funcion para actualizar el texto de todas las cards existentes
+function updateCardText(){
+    const cards = document.querySelectorAll('.class-container');
+    cards.forEach(card => {
+        const div = card.querySelector('.layer-top');
+        const p = card.querySelector('.texto-color');
+        
+        if (div && p) {
+            const colorHex = div.dataset.color; // Leer el color original guardado
+            p.textContent = getColorFormat() === "HEX" ? colorHex : hexToHSL(colorHex);
+        }
+    });
+}
+
 
 //Funcion para generar colores aleatorios en formato hexadecimal
 function generarHexadecimal() {
@@ -92,18 +110,22 @@ function crearCard(){
         nuevoDiv.classList.add("layer-top");
         const colorAleatorio = generarHexadecimal();
         nuevoDiv.style.backgroundColor = colorAleatorio;
+        nuevoDiv.dataset.color = colorAleatorio; // Guardar el color original
 
         //creo el parrafo que tiene el nombre del color
         const parrafoColor = document.createElement("p");        
         parrafoColor.classList.add("texto-color");
-        parrafoColor.textContent = hexToHSL(colorAleatorio);
+        parrafoColor.textContent = getColorFormat() === "HEX" ? colorAleatorio : hexToHSL(colorAleatorio);
 
         seccionContenedor.appendChild(nuevoArticle);
         nuevoArticle.appendChild(nuevoDiv);
         nuevoArticle.appendChild(parrafoColor);
 }
 
+
+radioBtnColorSelected.forEach(input => input.addEventListener('change', updateCardText));
 radioBtnColor.addEventListener('change', anadirCard)
+
 
 // Generar cards por defecto cuando carga la página
 anadirCard()
@@ -111,7 +133,14 @@ anadirCard()
 
 
 
-
+/*
+Concretamente, en tu código actual
+getColorFormat() devuelve "HEX" o "HSL"
+crearCard() guarda el color original en dataset.color
+updateCardText() usa ese color original para mostrar:
+#A1B2C3 si está en HEX
+hsl(...) si está en HSL
+*/
 
 
 
