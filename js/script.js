@@ -31,6 +31,41 @@ function generarHexadecimal() {
     return hexadecimal;
 }
 
+//Funcion para convertir de hexadecimal a HSL
+function hexToHSL(hex) {
+  // 1. Eliminar el '#' si existe y convertir a valores RGB
+    hex = hex.replace(/^#/, '');
+    
+    let r = parseInt(hex.substring(0, 2), 16) / 255;
+    let g = parseInt(hex.substring(2, 4), 16) / 255;
+    let b = parseInt(hex.substring(4, 6), 16) / 255;
+
+    // 2. Encontrar el máximo y mínimo para calcular la luminosidad
+    let max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+
+    if (max === min) {
+        h = s = 0; // Acromático (gris)
+    } else {
+        let d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+        switch (max) {
+        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+        case g: h = (b - r) / d + 2; break;
+        case b: h = (r - g) / d + 4; break;
+        }
+        h /= 6;
+    }
+
+    // 3. Formatear los resultados
+    h = Math.round(h * 360);
+    s = Math.round(s * 100);
+    l = Math.round(l * 100);
+
+    return `hsl(${h}, ${s}%, ${l}%)`;
+}
+
 
 //Funcion Añadir Card: Genera una nueva card basandome en el valor enviado en los radio Buttons
 function anadirCard(){
@@ -61,7 +96,7 @@ function crearCard(){
         //creo el parrafo que tiene el nombre del color
         const parrafoColor = document.createElement("p");        
         parrafoColor.classList.add("texto-color");
-        parrafoColor.textContent = colorAleatorio;
+        parrafoColor.textContent = hexToHSL(colorAleatorio);
 
         seccionContenedor.appendChild(nuevoArticle);
         nuevoArticle.appendChild(nuevoDiv);

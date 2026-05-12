@@ -45,9 +45,23 @@
                         
                         <input type="radio" name="palette-size" value="9" id="size-9">
                         <label for="size-9">9 colores</label>
+
+                        <input type="radio" name="palette-size" value="25" id="size-25">
+                        <label for="size-25">25 colores</label>
                     </div>
-                </fieldset>                
+                </fieldset>
+                
+                <div id="division-radiobuttom">
+                    <legend>Tipo de Color:</legend>
+                            <label>
+                                <input type="radio" name="tipo_color" value="HEX" checked> HEX
+                            </label>
+                            <label>
+                                <input type="radio" name="tipo_color" value="HSL"> HSL
+                            </label>
+                </div>
         </article>
+        
     </div>
 
     <!-- Principal -->
@@ -68,6 +82,10 @@
     
     <!-- pie de pagina -->
     <footer>
+        <label class="switch">
+            <input type="checkbox" id="toggleSwitch">
+            <span class="slider"></span>
+        </label>
 
     </footer>
 

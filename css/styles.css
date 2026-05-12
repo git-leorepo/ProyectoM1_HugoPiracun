@@ -12,21 +12,23 @@ Layout
 
 /* HEADER */
 header{
-    background-color:  #b5d0df;
+    /* background-color:  #b5d0df; */
+    background-color: black;
     display: flex;
     justify-content: center;    
 }
 
 .titulo-clase{
     /* background-color: #DDEFF9;  */
-    background-color: #b5d0df;   
+    /* background-color: #b5d0df;    */
+    background-color: black;
     width: 90%;   
     display: flex;
     /* margin-top: 10px;
     margin-bottom: 10px; */
 }
 .logo-sitio{
-    width: 100px; /* Ajusta el ancho según lo necesites */
+    width: 120px; /* Ajusta el ancho según lo necesites */
     height: auto;  /* Esto mantiene la proporción original para que no se deforme */
     margin-right: 0;
 }
@@ -51,7 +53,8 @@ header{
     display: flex;
     width: 90%;
     gap: 2 rem;
-    background-color: white;    
+    background-color: white;
+    justify-content: space-between;    
 }
 
 #contenedor-radio-colores{
@@ -65,14 +68,6 @@ header{
     padding: 0;
 }
 
-/* Estilizar la leyenda */
-#contenedor-radio-colores legend {
-    font-weight: 600;
-    color: #333;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    padding: 0;
-}
 
 /* Ocultar radio buttons nativos */
 #contenedor-radio-colores input[type="radio"] {
@@ -82,7 +77,7 @@ header{
 /* Estilizar labels como botones modernos */
 #contenedor-radio-colores label {
     /* display: inline-block; */
-    padding: 12px 24px;
+    padding: 6px 12px;
     background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
     border: 2px solid #ddd;
     border-radius: 50px;
@@ -92,6 +87,7 @@ header{
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     user-select: none;
+    font-family: "Story Script", sans-serif;
 }
 
 #contenedor-radio-colores label:hover {
@@ -103,11 +99,13 @@ header{
 
 /* Estado seleccionado */
 #contenedor-radio-colores input[type="radio"]:checked + label {
-    background: linear-gradient(135deg, #b5d0df 0%, #7db3d3 100%);
-    border-color: #5a9fc9;
+    /* background: linear-gradient(135deg, #b5d0df 0%, #7db3d3 100%); */
+    background: linear-gradient(135deg, black 0%, black 100%);
+    border-color: white;
     color: white;
-    box-shadow: 0 6px 16px rgba(90, 159, 201, 0.4);
+    box-shadow: 0 6px 16px rgba(90, 159, 201, 0.4);    
     transform: scale(1.05);
+    font-family: "Story Script", sans-serif;
 }
 
 #contenedor-radio-colores input[type="radio"]:checked + label::before {
@@ -115,6 +113,12 @@ header{
     font-weight: bold;
     margin-right: 5px;
 }
+
+#division-radiobuttom{
+    margin-right: 2rem;
+}
+
+
 
 /* MAIN */
 main {
@@ -129,7 +133,7 @@ main {
     justify-items: center;
     width: 90%;
     height: 60%px;
-    background-color: yellow;
+    background-color: white;
     gap: 0.5 rem;
     
 }
@@ -145,7 +149,7 @@ main {
     width: 100%;
     height: 80%; /* Ajusta esto para ver más o menos de la capa blanca */
     background-color: #4A90E2; /* Puedes cambiar este color */
-    border-radius: 20px;  
+    border-radius: 20px 20px 0 0;  
 }
 
 .texto-color{
