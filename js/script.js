@@ -3,9 +3,6 @@
 //Elemento article class: class-container
 const seccionContenedor = document.querySelector(".contenedor")
 
-//Elemento Generar Paleta en DOM
-const btnGenerarPaleta = document.getElementById('botonGenerarPaleta')
-
 //Btn Generar Card
 const btnGenerarCard = document.querySelector("#botonGenerarCard")
 
@@ -14,6 +11,9 @@ const radioBtnColor = document.querySelector("#contenedor-radio-colores")
 
 //Radio Button Tipo de Colores
 const radioBtnColorSelected = document.querySelectorAll('input[name="tipo_color"]');
+
+//Boton Generar Paleta
+const btnGenerarPaleta = document.querySelector('.btn-clase-paleta');
 
 
 /*FUNCIONES*/
@@ -122,13 +122,19 @@ function crearCard(){
         nuevoArticle.appendChild(parrafoColor);
 }
 
-
-radioBtnColorSelected.forEach(input => input.addEventListener('change', updateCardText));
-radioBtnColor.addEventListener('change', anadirCard)
-
-
 // Generar cards por defecto cuando carga la página
 anadirCard()
+
+//Añadirme las tarjetas cada vez que se cambie el valor del radio button de cantidad de colores
+radioBtnColor.addEventListener('change', anadirCard)
+
+//Actualizar el texto de las cards cada vez que se cambie el valor del radio button de tipo de color
+radioBtnColorSelected.forEach(input => input.addEventListener('change', updateCardText));
+
+// Agregar event listener al botón Generar Paleta
+btnGenerarPaleta.addEventListener('click', anadirCard);
+
+
 
 
 
