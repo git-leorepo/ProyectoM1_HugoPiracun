@@ -100,6 +100,7 @@ header{
     background: linear-gradient(135deg, #e8e8e8 0%, #d8d8d8 100%);
     /* border-color: #b5d0df; */
     border-color: rgb(0, 221, 255);
+    color: rgb(0, 221, 255);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(181, 208, 223, 0.3);
 }
@@ -132,7 +133,7 @@ header{
 
 #tipo-color{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: black;
 }
 
