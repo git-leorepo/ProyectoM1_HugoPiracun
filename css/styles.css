@@ -1,6 +1,10 @@
 /* ==========================================================================
 Variables y utilidades
 ========================================================================== */
+:root{
+    --azul-paleta:  rgb(0, 221, 255);
+    /* --azul-paleta: rgb(191, 245, 64); */
+}
 
 /* ==========================================================================
 Tipografía
@@ -46,11 +50,14 @@ header{
 }
 
 /*CONTROLES*/
+/*100% de la pagina*/
 .class-controles{
     background-color: aquamarine;    
     display: flex;
     justify-content: center;    
 }
+
+/*Contiene todos los botones de control*/
 .clase-articulo-botones{
     display: flex;
     width: 90%;
@@ -61,13 +68,14 @@ header{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/*1. Contiene la cantidad de colores 6, 8 y 9 colores*/
 #contenedor-radio-colores{
     display: flex;
     flex-direction: column;
     gap: 1rem;
     margin-left: 2rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;    
     border: none;
     padding: 0;
     font-size: 0.7rem;
@@ -97,8 +105,8 @@ header{
 
 #contenedor-radio-colores label:hover {
     background: linear-gradient(135deg, #e8e8e8 0%, #d8d8d8 100%);    
-    border-color: rgb(0, 221, 255);
-    color: rgb(0, 221, 255);
+    border-color: var(--azul-paleta);
+    color: var(--azul-paleta);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(181, 208, 223, 0.3);
 }
@@ -106,8 +114,8 @@ header{
 /* Estado seleccionado */
 #contenedor-radio-colores input[type="radio"]:checked + label {    
     background: rgb(53, 50, 50);
-    border-color: rgb(0, 221, 255);
-    color: rgb(0, 221, 255);
+    border-color: var(--azul-paleta);
+    color: var(--azul-paleta);
     box-shadow: 0 6px 16px rgba(90, 159, 201, 0.4);    
     transform: scale(1.05);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -119,16 +127,15 @@ header{
     margin-right: 3px;
 }
 
-/*Contenedor de radio buttons para elegir el Tipo Color*/
-
-
+/*2. Contenedor de radio buttons para elegir el Tipo Color*/
 #division-radiobuttom{
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-right: 2rem;
+    gap: 0.5rem;        
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
-
+/*fuente del label tipo color*/
 #tipo-color{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 0.7rem;
@@ -137,7 +144,7 @@ header{
 
 /*Estilos de los radio button del elemento tipo color*/
 #division-radiobuttom input[type="radio"] {
-    accent-color: rgb(0, 221, 255); /* Cambia esto por tu color ideal */
+    accent-color: var(--azul-paleta); /* Cambia esto por tu color ideal */
     transform: scale(0.8); /* Opcional: los hace un poquito más grandes */
 }
 
@@ -146,6 +153,49 @@ header{
     font-size: 0.7rem;
     color: black;
 }
+
+/*3. Contenedor div del Btn Generar Paleta*/
+#dividion-Btn-GenerarPaleta{
+    display: flex;
+    align-items: center;        
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/*Estilos para el Boton*/
+#btn-generar-paleta{
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    user-select: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#btn-generar-paleta:hover{
+    padding: 6px 12px;
+    background: black;
+    border: 2px solid var(--azul-paleta);
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--azul-paleta);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    user-select: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Efecto al hacer clic */
+#btn-generar-paleta:active {
+    transform: translateY(1px); /* Se hunde ligeramente al presionarlo */
+}
+
 
 
 /* MAIN */
